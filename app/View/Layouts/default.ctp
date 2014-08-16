@@ -17,16 +17,25 @@
  
  <p>
  <?php echo $this->Html->link('Home',array('controller'=>'pages','action'=>'home')); ?>
+ &nbsp;
  <?php echo $this->Html->link('My Blog',array('controller'=>'posts','action'=>'index')); ?>
- <?php echo $this->Html->link('My Resume',array('controller'=>'pages','action'=>'viewpdf')); ?>
+ &nbsp;
+ <?php echo $this->Html->link('My Resume','../'.DS.'app'.DS.'webroot'.DS.'files'.DS.'resume2.pdf'); ?>
+ &nbsp;
  <?php echo $this->Html->link('Space Game',array('controller'=>'answers','action'=>'space')); ?>
- <?php echo $this->Html->link('Moon Game',array('controller'=>'moon','action'=>'index')); ?></p>
+ &nbsp;
+ <?php echo $this->Html->link('Moon Game',array('controller'=>'moon','action'=>'index')); ?>
+ &nbsp;
+ <?php echo $this->Html->link('Graphic Design',array('controller'=>'pages','action'=>'grafix')); ?>
+ &nbsp;
+ <?php echo $this->Html->link('Car Auction Mock',array('controller'=>'vehicles','action'=>'index')); ?>
+ &nbsp;
+ <?php $this->Logged->check($this->Session->read('Auth.User.group_id')); ?>
+ </p>
  </div>
  <div id="content">
+  <?php echo $this->Session->flash(); ?>
   <?php echo $this->fetch('content'); ?>
- </div>
- <div>
-  <h4><center>2014 www.asdfpc.com Last Updated: 6/3/14 <a href="https://www.facebook.com/robert.rico.1217"><?php echo $this->Html->image('blu_box.png', array('alt' => 'CakePHP', 'border' => '0',)); ?></a></center></h4>
  </div>
 </body>
 </html>

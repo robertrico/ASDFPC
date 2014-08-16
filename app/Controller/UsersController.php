@@ -12,7 +12,7 @@
 			}
 			if($this->request->is('post')){
 				if($this->Auth->login()){
-					$this->redirect($this->Auth->redirectUrl());
+					$this->redirect(array('controller'=>'pages','action' => 'index'));
 				}
 				$this->Session->setFlash(__('Invalid username or password'));
 			}

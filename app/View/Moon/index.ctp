@@ -1,29 +1,22 @@
-<html>
-<header>
 	<?php echo $this->Html->css('moon.css'); ?>
 	<?php echo $this->Html->script('jquery'); ?>
 	<?php echo $this->Html->script('moon'); ?>
 	
-	<?php echo $this->Html->script('jquery.paulund_modal.js'); ?>
-	<?php
 		
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
-		$path = WWW_ROOT;
-		?>
-	
-	
-</header>
-<body style ="background: backdrop.jpg">
+	<h1><center>The Moon</center></h1>
 
-<h2><center>The Moon</center></h2>
-<div>
-	<center class="subtitle">Earth's Biggest Sattelite</center>
+	<center class="subtitle"><span style="font-color:white; font-size: 200%;" class="glyphicon glyphicon-globe"></span>       Earth's Biggest Sattelite</center>
 
-		<h3>Name the Moon Phase</h3>
-		<div id="img">
-		<table class="subtitle">
+</br>	
+<div class="col-md-12" style="background-color:transparent;">
+	<div class="panel panel-default" style="background-color:transparent;">
+    	<div class="panel-heading">
+			<center>
+        	<h3 class="panel-title" style="font-size:130%">Name the Moon Phase</h3>
+			</center>
+        </div>
+        <div class="panel-body" >
+        	<table style="width:110%">
 		<!-- First List of Planets-->
 			<tr id="planet" >
 				<td onclick="quest('New Moon')";><div id="name"></div><?php echo $this->Html->image("phases/new.png");?><div id="fact"></div></td>
@@ -32,9 +25,9 @@
 				<td onclick="quest('Waxing Gibbous')";><div id="name4"></div><?php echo $this->Html->image("phases/3.4.1.png");?><div id="fact4"></div></td>
 					
 				</tr>
-			</table>
+			</table></br>
 			
-			<table>
+			<table style="width:100%">
 				<tr>
 					<center>
 						<td colspan="4" onclick="location.reload();";>
@@ -42,10 +35,10 @@
 						</td>
 					</center>
 				</tr>
-			</table>
+			</table></br>
 		
 		<!-- Second set of planets-->
-			<table class="subtitle">
+			<table style="width:110%">
 				<tr id="planet">
 					<td onclick="quest('Full Moon')";><div id="name5"></div><?php echo $this->Html->image("phases/full.png");?><div id="fact5"></div></td>
 					<td onclick="quest('Waning Gibbous')";><div id="name6"></div><?php echo $this->Html->image("phases/3.4.2.png");?><div id="fact6"></div></td>
@@ -53,13 +46,13 @@
 					<td onclick="quest('Waning Crescent')";><div id="name8"></div><?php echo $this->Html->image("phases/cres2.png");?><div id="fact8"></div></td>
 					
 				</tr>
-			</table>
-		</div>
+			</table>   
+       </div>
+    </div>
 </div>
+	
 
 
-</body>
-</html>
 
 
 

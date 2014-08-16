@@ -1,38 +1,36 @@
-<!DOCTYPE>
-<html>
-<head>
-<title>Robert Rico's Portfolio</title>
-<?php
-    $this->Html->meta('icon', $this->Html->url('favicon.ico'));
-    echo $this->Html->css('port_style'); ?>
-</head>
-<body>
-<div id="wrap">
-
-
-  <div id="main">
-
-  <div id="title">
-    <h1><center>Graphic Design</center></h1>
-    <center><p class="subtitle">Here are some designs I created using GIMP2</p></center>
-    </div><br/>
-
-    <div id="title">
-        <p class="subtitle">First WebSite Logo</p>
-		<?php echo $this->Html->image('altLogo.png', array('alt' => 'CakePHP', 'border' => '0',));?>
-        
-        <p class="subtitle">Another WebSite Logo</p>
-		<?php echo $this->Html->image('newlogo.png', array('alt' => 'CakePHP', 'border' => '0',));?>
-         
-        <p class="subtitle">MockUp Logo For a Landscaping Company</p>
-		<?php echo $this->Html->image('rland.png', array('alt' => 'CakePHP', 'border' => '0',));?>
-         </div>
-
-   
-
-
-
+<div class="col-md-12">
+	<div class="panel panel-default">
+    	<div class="panel-heading">
+			<center>
+        	<h3 class="panel-title" style="font-size:130%">Graphic Design</h3>
+			</center>
+        </div>
+		<center><p>Here are some simple designs I created using GIMP2</p></center>
+        <div class="panel-body" >
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" style="font-size:130%">A website logo</h3>
+					</div>
+					<?php echo $this->Html->image('altLogo.png', array('alt' => 'CakePHP', 'border' => '0',));?>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" style="font-size:130%">An alternate website logo</h3>
+					</div>
+					<?php echo $this->Html->image('newlogo.png', array('alt' => 'CakePHP', 'border' => '0',));?>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default" style="vertical-align:middle;">
+					<div class="panel-heading">
+						<h3 class="panel-title" style="font-size:130%">MockUp Logo For a Landscaping Company</h3>
+					</div>
+					<?php echo $this->Html->image('rland.png', array('alt' => 'CakePHP', 'border' => '0',));?>
+				</div>
+			</div>
+		</div>
+    </div>
 </div>
-</div>
-</body>
-</html>
