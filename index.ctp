@@ -37,9 +37,7 @@
 		<td>
 			<?php echo $this->Html->link(__('View Me!'), array('action' => 'view', $vehicle['Vehicle']['id'])); ?>
 		</td>
-		<td> <?php echo $this->Html->image($vehicle['Vehicle']['img'],array('style' => 'width:300px; height: 200px;', 'data-src'=>"holder.js/200x200", 'class' => 'img-thumbnail', 'alt' => '200x200')); ?>
-		</td>
-		<!--<td><img src=<?php echo WWW_ROOT.'img'.DS.$vehicle['Vehicle']['img'];?> style="width: 300px; height: 200px;" data-src="holder.js/200x200" class="img-thumbnail" alt="200x200"></td>-->
+		<td><img src=<?php echo '/asdfpc/img'.DS.$vehicle['Vehicle']['img'];?> style="width: 300px; height: 200px;" data-src="holder.js/200x200" class="img-thumbnail" alt="200x200"></td>
 		<td><?php echo h($vehicle['Vehicle']['make']); ?>&nbsp;</td>
 		<td><?php echo h($vehicle['Vehicle']['model']); ?>&nbsp;</td>
 		<td><?php echo h($vehicle['Vehicle']['year']); ?>&nbsp;</td>
