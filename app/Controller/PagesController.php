@@ -36,6 +36,7 @@ class PagesController extends AppController {
  * @var array
  */
 	public $uses = array();
+	public $helpers = array('Html','Form');
 
 /**
  * Displays a view
@@ -50,7 +51,7 @@ class PagesController extends AppController {
 			$this->Auth->allow('index', 'view');
 			$this->Auth->allow('viewpdf', 'view');
 		}
-		
+	public function index(){}	
 	public function display() {
 		$path = func_get_args();
 
@@ -87,7 +88,6 @@ class PagesController extends AppController {
 		return $this->response;
 	
 	}
-	public $helpers = array('Html','Form');
 	
 	
 }

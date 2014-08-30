@@ -34,9 +34,10 @@ class AppController extends Controller {
 
 	public $components = array(
 		'Session',
+		'DebugKit.Toolbar',
 		'Paginator',
 		'Auth' => array(
-			'loginRedirect' => array('controller' => 'posts','action' => 'add'),
+			'loginRedirect' => array('controller' => 'pages','action' => 'index'),
 			'logoutRedirect' => array(
 				'controller' => 'pages',
 				'action' => 'display',
@@ -53,7 +54,7 @@ class AppController extends Controller {
 		}
 		
 		public function isAuthorized($user) {
-			if (isset($user['role']) && $user['role'] === 'admin'){
+			if (isset($user['group_id']) && $user['role'] === 1){
 			return true;
 			}
 			return false;

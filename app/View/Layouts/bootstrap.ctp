@@ -36,7 +36,7 @@ echo $this->Html->script('sitewide');
  
  <div class="jumbotron">
         <h1 style="margin-top:-50px;"><?php echo $this->Html->image('newlogo.png');?></h1>
-<?php echo $this->Html->link('Home',array('controller'=>'pages','action'=>'home'),array('class' => 'btn btn-primary')); ?>
+<?php echo $this->Html->link('Home',array('controller'=>'pages','action'=>'index'),array('class' => 'btn btn-primary')); ?>
  &nbsp;
  <?php echo $this->Html->link('My Blog',array('controller'=>'posts','action'=>'index'),array('class' => 'btn btn-primary')); ?>
  &nbsp;
@@ -49,6 +49,8 @@ echo $this->Html->script('sitewide');
  <?php echo $this->Html->link('Graphic Design',array('controller'=>'pages','action'=>'grafix'),array('class' => 'btn btn-primary')); ?>
  &nbsp;
  <?php echo $this->Html->link('Car Auction Mock',array('controller'=>'vehicles','action'=>'index'),array('class' => 'btn btn-primary')); ?>
+ &nbsp;
+ <?php echo $this->Html->link('PDF Rendering',array('controller'=>'documents','action'=>'index'),array('class' => 'btn btn-primary')); ?>
  &nbsp;
  <?php $this->Logged->check($this->Session->read('Auth.User.group_id')); ?>
 
