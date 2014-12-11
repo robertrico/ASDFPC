@@ -1,0 +1,33 @@
+<map version="0.9.0">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1413653614230" ID="ID_1280279786" LINK="https://dl.dropboxusercontent.com/u/31878359/courses/20/hw07.txt" MODIFIED="1413655984420" TEXT="21">
+<node CREATED="1413654348128" HGAP="-12" ID="ID_1307862355" MODIFIED="1413824598743" POSITION="right" TEXT="TwentyOneDeck extends Deck" VSHIFT="58">
+<node CREATED="1413655026331" ID="ID_190769858" MODIFIED="1413655305510" TEXT="hitOrStay(TwentyOneHand);" VSHIFT="-10"/>
+<node CREATED="1413655085387" ID="ID_964629539" MODIFIED="1413655094232" TEXT="makeTwentyOneHand();"/>
+</node>
+<node CREATED="1413654210328" ID="ID_384239047" MODIFIED="1413655992274" POSITION="left" TEXT="TwentyOneHand Extends Hand" VSHIFT="19">
+<node CREATED="1413653729811" HGAP="22" ID="ID_1197251689" MODIFIED="1413655186982" TEXT="getValue();" VSHIFT="-27">
+<node CREATED="1413653756936" HGAP="18" ID="ID_1742197642" MODIFIED="1413654141329" TEXT="If over 21" VSHIFT="-25">
+<icon BUILTIN="info"/>
+<node CREATED="1413653811241" HGAP="19" ID="ID_300101285" MODIFIED="1413655220864" TEXT="If there is an ace, reduce to 1" VSHIFT="-20">
+<icon BUILTIN="info"/>
+<node CREATED="1413653850760" HGAP="19" ID="ID_981199559" MODIFIED="1413655011264" TEXT="TwentyOneDeck.hitOrStay();" VSHIFT="-14">
+<icon BUILTIN="help"/>
+</node>
+<node CREATED="1413653830384" HGAP="18" ID="ID_512761185" MODIFIED="1413654122444" TEXT="Bust!" VSHIFT="13">
+<icon BUILTIN="stop-sign"/>
+</node>
+</node>
+</node>
+<node CREATED="1413654674260" HGAP="19" ID="ID_700803666" MODIFIED="1413654726341" TEXT="TwentyOneDeck.hitOrStay();" VSHIFT="25">
+<node CREATED="1413654729995" ID="ID_1447494323" MODIFIED="1413655534163" TEXT="True: TwentyOneDeck.addCard(TwentyOneHand); &amp;&amp; TwentyOneDeck.hitOrStay();" VSHIFT="-11"/>
+<node CREATED="1413654877543" HGAP="24" ID="ID_1472056003" MODIFIED="1413655976935" TEXT="False: Run Dealer Hand. If value &lt; 17, dealer hits" VSHIFT="21">
+<node CREATED="1413654918541" HGAP="26" ID="ID_718157563" MODIFIED="1413654931583" TEXT="Compare Dealer v Player" VSHIFT="-14">
+<node CREATED="1413654937334" HGAP="27" ID="ID_643254722" MODIFIED="1413654947036" TEXT="return winner;" VSHIFT="-11"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</map>

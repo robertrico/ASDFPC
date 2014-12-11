@@ -1,0 +1,312 @@
+import java.util.*;
+import java.util.Arrays.*;
+/**
+ *
+ */
+public class FixConvert {
+    //nullChar usage https://community.oracle.com/message/8908570
+<<<<<<< HEAD
+    private final char nullChar = '\u0000';
+    private Stack stack;
+=======
+    private final char NULLCHAR = '\u0000';
+    @SuppressWarnings("unchecked")
+    private Stack<Character> stack;
+>>>>>>> beeb889dfb339d199b5ddf837e6db583d23939fb
+    private char[] operators;
+    private char[] tier1;
+    private char[] tier2;
+    private char[] tier3;
+<<<<<<< HEAD
+
+    /**
+     * Constructor
+     * @param stack      Stack to use for precedence
+     * @param operators  An array of operators to check against
+     * @param tier1      Highest Precedence
+     * @param tier2      Medium Precedence
+     * @param tier3      Lowest Precedence
+     *
+     */
+    public FixConvert(){
+        stack = new Stack();
+        operators = new char[] {'*','/','-','+','(',')','^'};
+        tier1 = new char[] {operators[4],operators[5]};
+        tier2 = new char[] {operators[0],operators[1]};
+        tier3 = new char[] {operators[2],operators[3]};
+    }
+    /**
+     * Determines whether or not the current char is an operator
+     * @return boolean
+     * @param input the character to check
+     */
+    public boolean isOperator(char input){
+        for(int i = 0; i < operators.length; i++){
+            if(operators[i] == input){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Determines what tier the current character is.
+     * @return int arbitrary numbers
+     */
+    public int tier(char input){
+        for(int i = 0; i < tier1.length; i++){
+            if(tier1[i] == input){
+                return 1;
+            }
+        }
+        for(int i = 0; i < tier2.length; i++){
+            if(tier2[i] == input){
+                return 2;
+            }
+        }
+        for(int i = 0; i < tier3.length; i++){
+            if(tier2[i] == input){
+                return 3;
+            }
+        }
+        return 0;
+=======
+>>>>>>> beeb889dfb339d199b5ddf837e6db583d23939fb
+
+    /**
+     * Constructor
+     * @param stack      Stack to use for precedence
+     * @param operators  An array of operators to check against
+     * @param tier1      Highest Precedence
+     * @param tier2      Medium Precedence
+     * @param tier3      Lowest Precedence
+     *
+     */
+    public FixConvert(){
+        stack = new Stack<Character>();
+        operators = new char[] {'*','/','-','+','(',')','^'};
+        tier1 = new char[] {operators[4],operators[5]};
+        tier2 = new char[] {operators[0],operators[1]};
+        tier3 = new char[] {operators[2],operators[3]};
+    }
+<<<<<<< HEAD
+
+    /**
+     * Converts a infix string equation to postfix notation
+     */
+    public void infixToPostfix(String equation){
+        char[] parsed = new char[equation.length()];  
+        int j = 0;
+        char numOp = nullChar;
+        for(int i = 0; i < equation.length(); i++){
+            numOp = equation.charAt(i);
+            if(isOperator(numOp)){
+                if(numOp == '('){
+                    stack.push(numOp);
+                }
+                switch(tier(numOp)){
+                        //exponent
+                    case 0:
+
+                        break;
+                        // ( )
+                    case 1:
+
+                        break;
+                        // * /
+                    case 2:
+
+                        break;
+                        // + -
+                    case 3:
+
+                        break;
+                        //throw exception
+                    default:
+
+
+
+                }
+            }else {
+                parsed[j] = equation.charAt(i);
+                j++;
+            }
+        }  
+        System.out.println(parsed);
+        //evalPostfix(finalParsed);
+    }
+   /**
+     * Evaluates the Postfixe notated expression
+     * @return int The final value of the expression  
+     */
+    public int evalPostfix(char[] postFixEquation){
+        int value = 0;
+        for(int i = 0; i < postFixEquation.length; i++){
+            if(!isOperator(postFixEquation[i])){
+                stack.push(postFixEquation[i]); 
+                System.out.println(postFixEquation[i]);
+            }
+        }
+        return 0;
+    }
+    /**
+     * Unit Testing
+     */
+    public static void main(String[] args){
+        FixConvert ob = new FixConvert();
+        String test = "1*(2+4)-8";
+        ob.infixToPostfix(test);
+        /*char[] tstArr = ob.infixToPostfix(test);
+          for (int i=0; i < tstArr.length; i++){
+          System.out.println(tstArr[i]);
+          }*/
+=======
+    /**
+     * Determines whether or not the current char is an operator
+     * @return boolean
+     * @param input the character to check
+     */
+    public boolean isOperator(char input){
+        for(int i = 0; i < operators.length; i++){
+            if(operators[i] == input){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Determines what tier the current character is.
+     * @return int arbitrary numbers
+     */
+    public int tier(char input){
+        for(int i = 0; i < tier1.length; i++){
+            if(tier1[i] == input){
+                return 1;
+            }
+        }
+        for(int i = 0; i < tier2.length; i++){
+            if(tier2[i] == input){
+                return 2;
+            }
+        }
+        for(int i = 0; i < tier3.length; i++){
+            if(tier3[i] == input){
+                return 3;
+            }
+        }
+        return 0;
+>>>>>>> beeb889dfb339d199b5ddf837e6db583d23939fb
+
+    }
+    /*public void infixToPostfix(String equation){
+      char[] parsed = new char[equation.length()];  
+      char[] finalParsed = new char[equation.length()];  
+      int j = 0;
+      int h = 0;
+      for(int i = 0; i < equation.length(); i++){
+      if(isOperator(equation.charAt(i))){ 
+      if(equation.charAt(i) == '('){
+      parsed[h] = equation.charAt(i+1);
+      h++;
+      }
+      }else{
+      finalParsed[j] = equation.charAt(i);
+      j++;
+      }
+      }
+      j = 0;
+      for(int i = 0; i < equation.length(); i++){
+      if(finalParsed[i] == nullChar){
+      if(parsed[j] != nullChar){
+      finalParsed[i] = parsed[j];
+      j++;
+      }
+      }
+      }
+      System.out.println(finalParsed);
+    //evalPostfix(finalParsed);
+    }*/
+
+
+
+    /**
+     * Converts a infix string equation to postfix notation
+     */
+    public void infixToPostfix(String equation){
+        char[] parsed = new char[equation.length()];  
+        int j = 0;
+        char numOp = NULLCHAR;
+        boolean precedence = false;
+        for(int i = 0; i < equation.length(); i++){
+            numOp = equation.charAt(i);
+            if(isOperator(numOp)){
+                if(numOp == '('){
+                }
+                switch(tier(numOp)){
+                    case 0:
+                        //exponent
+
+                        break;
+                    case 1:
+                        // ( )
+                        if(numOp == '('){
+                            stack.push(numOp);
+                        }
+                        break;
+                    case 2:
+                        // * /
+                        if(tier(stack.peek()) == tier(numOp)){
+                            parsed[j] = stack.pop();
+                            j++;
+                        }
+                        stack.push(numOp);
+                        break;
+                    case 3:
+                        // + -
+                        stack.push(numOp);
+                        break;
+                        //throw exception
+                    default:
+                }
+
+            }else {
+                parsed[j] = equation.charAt(i);
+                j++;
+            }
+        }  
+        for(int k=0; k <= stack.size(); k++){
+            parsed[j] = stack.pop();
+            j++;
+        }
+        System.out.println(parsed);
+        //evalPostfix(finalParsed);
+    }
+   /**
+     * Evaluates the Postfixe notated expression
+     * @return int The final value of the expression  
+     */
+    public int evalPostfix(char[] postFixEquation){
+        int value = 0;
+        for(int i = 0; i < postFixEquation.length; i++){
+            if(!isOperator(postFixEquation[i])){
+                stack.push(postFixEquation[i]); 
+                System.out.println(postFixEquation[i]);
+            }
+        }
+        return 0;
+    }
+    /**
+     * Unit Testing
+     */
+    public static void main(String[] args){
+        FixConvert ob = new FixConvert();
+        String test = "3+4*2/(1-5)^2^3";
+        ob.infixToPostfix(test);
+        /*char[] tstArr = ob.infixToPostfix(test);
+          for (int i=0; i < tstArr.length; i++){
+          System.out.println(tstArr[i]);
+          }*/
+
+    }
+}

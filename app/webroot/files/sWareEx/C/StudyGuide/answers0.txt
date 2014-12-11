@@ -1,0 +1,8 @@
+ax,bx,cx,dx
+mov
+add
+sub
+cmp
+jmp
+loop
+sp

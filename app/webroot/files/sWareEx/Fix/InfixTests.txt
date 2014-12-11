@@ -1,0 +1,17 @@
+**********Test Cases**********
+> 5
+> 9
+> 10
+> 14
+> 14
+> 20
+> 68
+> 262144
+> 1048576
+> 16384
+> 4
+> java.lang.RuntimeException
+> (
+> java.lang.Exception: Improper Operators or Parentheses
+> java.util.EmptyStackException
+> 

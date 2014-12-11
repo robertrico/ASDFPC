@@ -1,0 +1,64 @@
+#TwentyOneDeck Unit Test########################################################
+[[(8 of CLUBS), (Ace of SPADES)], [(Queen of SPADES), (Ace of HEARTS)]]
+[(8 of CLUBS), (Ace of SPADES)]
+[(Queen of SPADES), (Ace of HEARTS)]
+
+#TwentyOneHand Unit Test########################################################
+[(Ace of CLUBS), (Ace of CLUBS), (2 of HEARTS), (10 of CLUBS)]
+14
+[(Jack of DIAMONDS), (Ace of CLUBS), (Queen of DIAMONDS), (King of DIAMONDS)]
+31
+[(Ace of DIAMONDS), (King of DIAMONDS)]
+21
+
+#TwentyOne Output###############################################################
+Dealer shows: 
+(3 of SPADES)
+Your Hand: 13
+[(6 of SPADES), (7 of DIAMONDS)]
+Do you want to hit or stay?(h/s)
+h
+Dealer shows: 
+(3 of SPADES)
+Your Hand: 17
+[(6 of SPADES), (7 of DIAMONDS), (4 of SPADES)]
+Do you want to hit or stay?(h/s)
+h
+You got 27
+with [(6 of SPADES), (7 of DIAMONDS), (4 of SPADES), (King of HEARTS)]
+BUST! You went over 21.
+Dealer wins.
+Do you want to play again?(y/n)
+y
+Dealer shows: 
+(3 of CLUBS)
+Your Hand: 16
+[(5 of DIAMONDS), (Ace of DIAMONDS)]
+Do you want to hit or stay?(h/s)
+h
+Dealer shows: 
+(3 of CLUBS)
+Your Hand: 16
+[(5 of DIAMONDS), (Ace of DIAMONDS), (Queen of CLUBS)]
+Do you want to hit or stay?(h/s)
+s
+You got 16
+with [(5 of DIAMONDS), (Ace of DIAMONDS), (Queen of CLUBS)]
+Dealer gets 24
+with [(3 of CLUBS), (2 of SPADES), (Jack of HEARTS), (9 of CLUBS)]
+You win!
+Do you want to play again?(y/n)
+y
+Dealer shows: 
+(2 of CLUBS)
+Your Hand: 17
+[(9 of CLUBS), (8 of CLUBS)]
+Do you want to hit or stay?(h/s)
+s
+You got 17
+with [(9 of CLUBS), (8 of CLUBS)]
+Dealer gets 24
+with [(2 of CLUBS), (2 of DIAMONDS), (Jack of DIAMONDS), (10 of CLUBS)]
+You win!
+Do you want to play again?(y/n)
+n

@@ -9,7 +9,8 @@
   </title>
   <?php
     $this->Html->meta('icon', $this->Html->url('favicon.ico'));
-    echo $this->Html->css('port_style.css'); ?>
+    echo $this->Html->css('port_style.css'); 
+    echo $this->layout('bootstrap'); ?>
 </head>
 <body>
  <div id="header">
@@ -34,6 +35,7 @@
  </p>
  </div>
  <div id="content">
+  <?php echo $this->layout('bootstrap); ?>
   <?php echo $this->Session->flash(); ?>
   <?php echo $this->fetch('content'); ?>
  </div>

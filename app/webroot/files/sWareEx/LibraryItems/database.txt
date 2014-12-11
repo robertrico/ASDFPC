@@ -1,0 +1,37 @@
+6
+BOOK
+The affluent society
+1958
+330 GAL
+Houghton Mifflin
+Galbraith, John Kenneth
+BOOK
+America and Americans
+1966
+917.303 STE
+Viking Press
+Steinbeck, John
+BOOK
+Death in the afternoon
+1932
+791.82 HEM
+Scribner
+Hemingway, Ernest
+DVD
+To kill a mockingbird
+1962
+DVD YA TO
+Universal Pictures
+129 minutes
+DVD
+Pulp fiction
+1994
+DVD FIC PULP
+Mirimax Films
+158 minutes
+DVD
+Star wars
+1977
+DVD J STAR
+20th Century Fox
+121 minutes

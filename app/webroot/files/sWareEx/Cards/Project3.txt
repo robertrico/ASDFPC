@@ -1,0 +1,105 @@
+We are going to write some programs that implement card games using standard
+decks of 52 cards. The first step will be the design of several classes: Card,
+Deck and Hand. A Card object represents a single card. A Deck object represents
+a deck of 52 cards. A Hand is a subset of cards from a deck. None of these
+classes have an "is a" relation with each other, so there will be no inheritance
+in this assignment. But, there are some "has a" relationships -- a deck has 52
+cards, a deck has zero or more hands and a hand has zero or more cards -- so
+these classes may appear as fields in each other.
+
+Write three classes (Deck, Hand, Card) that enable the following program.
+
+import java.util.*;
+
+public class Main {
+    
+    public static void main(String[] args) {
+        Deck deck = new Deck();             // new deck, unshuffled
+        
+        // Managing hands myself
+        List<Hand> hands = new ArrayList<Hand>();
+        for (int i=0; i< 3; i++) {
+            hands.add( deck.makeHand(5) );  // Ask deck to make 3 hands, size 5
+        }
+        for (Hand h : hands) {
+            System.out.println(h);          // Print hands, not shuffled yet
+        }
+        System.out.println();
+        
+        deck.shuffle();                     // Cancel current hands, shuffle
+
+        // Letting deck manage hands
+        for (int i=0; i< 3; i++) {
+            deck.makeHand(5);               // Ask deck to make 3 hands, size 5
+        }
+        hands = deck.getHands();
+        System.out.println(deck);           // Have deck print all hands
+        for (Hand h : hands) {
+            System.out.println(h);          // Use List of hands to do the same
+        }
+        System.out.println();
+        for (Hand h : hands) {              // Print the hands card by card
+            List<Card> cards = h.getCards();
+            System.out.print("[");
+            for (Card c : cards) {
+                System.out.print(c + " ");
+            }
+            System.out.println("]");
+        }
+    }
+}
+
+My program outputs the following when I run this code.
+
+[(1 CLUBS), (2 CLUBS), (3 CLUBS), (4 CLUBS), (5 CLUBS)]
+[(6 CLUBS), (7 CLUBS), (8 CLUBS), (9 CLUBS), (10 CLUBS)]
+[(11 CLUBS), (12 CLUBS), (13 CLUBS), (1 DIAMONDS), (2 DIAMONDS)]
+
+[(2 DIAMONDS), (10 HEARTS), (5 HEARTS), (12 SPADES), (6 DIAMONDS)]
+[(9 DIAMONDS), (11 HEARTS), (3 HEARTS), (7 DIAMONDS), (9 HEARTS)]
+[(1 HEARTS), (12 HEARTS), (4 CLUBS), (2 HEARTS), (1 DIAMONDS)]
+
+[(2 DIAMONDS), (10 HEARTS), (5 HEARTS), (12 SPADES), (6 DIAMONDS)]
+[(9 DIAMONDS), (11 HEARTS), (3 HEARTS), (7 DIAMONDS), (9 HEARTS)]
+[(1 HEARTS), (12 HEARTS), (4 CLUBS), (2 HEARTS), (1 DIAMONDS)]
+
+[(2 DIAMONDS) (10 HEARTS) (5 HEARTS) (12 SPADES) (6 DIAMONDS) ]
+[(9 DIAMONDS) (11 HEARTS) (3 HEARTS) (7 DIAMONDS) (9 HEARTS) ]
+[(1 HEARTS) (12 HEARTS) (4 CLUBS) (2 HEARTS) (1 DIAMONDS) ]
+
+Some notes:
+
+* We'll discuss designing these classes in lecture and/or lab.
+
+* Each class you write should have a simple unit test embedded in it. This means
+each should have it's own main() that creates one or more objects of the class
+and exercises its functionality, especially of edge cases.
+
+* For now don't worry about Ace, Jack, Queen, King; we'll use 1-13 for the card
+values.
+
+* Inside my Card class I have
+
+    public enum Suit {
+        CLUBS, DIAMONDS, HEARTS, SPADES
+    }
+
+This is a convenient way to declare four constants at once. Inside the Card
+class I can declare variables to be of type Suit, I can refer to the enums like
+Suit.CLUBS, outside of Card I can refer to the enums as Card.Suit.CLUBS, the
+enums have toString() and ordinal() auto-defined to allow printing and getting
+an order-valued integer (ie, Suit.CLUBS.ordinal() == 0). So, all of those suits
+listed above were printed by print() automatically all I had to do was pass it
+the a Suit variable and it printed the enum value. Read more about enums in your
+book and/or online.
+
+* Collection classes can be sent to print() and println() (ie, they have a
+toString() method defined). The collection iterates over all of the elements in
+the collection and print each one. Most of the printing above was handled that
+way.
+
+* Don't use arrays for anything. Use Collections classes instead.
+
+* We will add more functionality to the classes later in the semester to make
+them more full-featured.
+

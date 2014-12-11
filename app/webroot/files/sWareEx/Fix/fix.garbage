@@ -1,0 +1,77 @@
+char[] parsed = new char[equation.length()];  
+        int j = 0;
+        char numOp = NULLCHAR;
+        boolean precedence = false;
+        for(int i = 0; i < equation.length(); i++){
+            numOp = equation.charAt(i);
+            if(isOperator(numOp)){
+                if(numOp == '('){
+                }
+                switch(tier(numOp)){
+                    case 0:
+                        //exponent
+
+                        break;
+                    case 1:
+                        // ( )
+                        if(numOp == '('){
+                            stack.pop();
+                            i++;
+                        }
+                        while(equation.charAt(i) != ')'){
+                            if(isOperator(equation.charAt(i))){
+                                try{
+                                    if(tier(stack.peek()) < tier(equation.charAt(i))){
+                                        parsed[j] = stack.pop();
+                                        j++;
+                                    }
+                                    stack.push(equation.charAt(i));
+                                } catch(Exception e){
+                                    //empty stack
+                                }
+                            }else {
+                                parsed[j] = equation.charAt(i);
+                                j++;
+                            }
+                            i++;
+                        }
+                        parsed[j] = equation.charAt(i);
+                        j++;
+                        break;
+                        //TODO WHERE IS THE PAREN COMING FROM!?!??!?!!?!?
+                    case 2:
+                        // * /
+                        if(tier(stack.peek()) == tier(equation.charAt(i))){
+                            parsed[j] = stack.pop();
+                            j++;
+                        }
+                        stack.push(numOp);
+                        break;
+                    case 3:
+                        // + -
+                        try{
+                            if(tier(stack.peek()) < tier(numOp)){
+                                parsed[j] = stack.pop();
+                                j++;
+                            }
+                        } catch(Exception e){
+                            //empty stack
+                        }
+                        stack.push(numOp);
+                        break;
+                        //throw exception
+                    default:
+                }
+
+            }else {
+                parsed[j] = equation.charAt(i);
+                j++;
+            }
+        }  
+        //Why is this + 1 on stack size?
+        for(int k=0; k <= stack.size()+1; k++){
+            parsed[j] = stack.pop();
+            j++;
+        }
+        System.out.println(parsed);
+        //evalPostfix(finalParsed);
